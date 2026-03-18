@@ -1,12 +1,7 @@
-# Payment DAI API
-
-A Python FastAPI-based payment processing API for DAI (Decentralized AI) token transactions.
-
 ## Features
 
 - Create and manage payment transactions
 - Query transaction history and status
-- Support for DAI token payments
 - RESTful API endpoints
 - Transaction status tracking (pending, completed, failed, cancelled)
 - Built with FastAPI for high performance
@@ -53,15 +48,6 @@ Or using uvicorn directly:
 ```bash
 uvicorn main:app --reload
 ```
-
-The API will be available at `http://localhost:8000`
-
-## API Documentation
-
-Once running, visit:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
 ## Endpoints
 
 ### Health Check
@@ -75,7 +61,7 @@ Once running, visit:
 ```json
 {
   "amount": 100.0,
-  "currency": "DAI",
+  "currency": "EUR",
   "recipient_address": "0x1234567890abcdef...",
   "description": "Payment for services"
 }
