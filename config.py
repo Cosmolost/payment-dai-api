@@ -1,27 +1,16 @@
 import os
-from dotenv import load_dotenv
+import dotenv
 
-load_dotenv()
+# Configuration for EUR currency
+CURRENCY = 'EUR'
 
-class Settings:
-    """Application settings"""
-    # API
-    API_HOST = os.getenv("API_HOST", "0.0.0.0")
-    API_PORT = int(os.getenv("API_PORT", 8000))
-    DEBUG = os.getenv("DEBUG", "False").lower() == "true"
-    
-    # Database
-    DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./payments.db")
-    
-    # DAI Configuration
-    DAI_CONTRACT_ADDRESS = os.getenv("DAI_CONTRACT_ADDRESS", "0x6B175474E89094C44Da98b954EedeAC495271d0F")
-    WEB3_PROVIDER_URL = os.getenv("WEB3_PROVIDER_URL", "")
-    
-    # Security
-    SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
-    ALGORITHM = os.getenv("ALGORITHM", "HS256")
-    
-    class Config:
-        env_file = ".env"
+# Stripe Configuration
+STRIPE_API_KEY = 'your_stripe_api_key'
+STRIPE_PUBLIC_KEY = 'your_stripe_public_key'
 
-settings = Settings()
+# PayPal Configuration
+PAYPAL_CLIENT_ID = 'your_paypal_client_id'
+PAYPAL_SECRET = 'your_paypal_secret'
+
+# Load environment variables
+dotenv.load_dotenv()
